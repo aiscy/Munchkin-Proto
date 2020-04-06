@@ -9,6 +9,9 @@ package munchkin;
 
 service Greeter {
     rpc SayHello (HelloRequest) returns (HelloReply) {}
+    rpc LotsOfReplies(HelloRequest) returns (stream HelloReply);
+    rpc LotsOfGreetings(stream HelloRequest) returns (HelloReply);
+    rpc BidiHello(stream HelloRequest) returns (stream HelloReply);
 }
 
 message HelloRequest {
